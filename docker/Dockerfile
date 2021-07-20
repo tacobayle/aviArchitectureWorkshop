@@ -1,7 +1,7 @@
 FROM alpine:3.13.4
 LABEL maintainer="Nicolas Bayle"
 
-RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl sshpass py3-pip bash \
+RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl sshpass py3-pip \
     python3-dev libffi-dev openssl-dev build-base \
     && pip3 install 'cryptography<=3' \
     && pip3 install --upgrade pip \
@@ -15,7 +15,4 @@ RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl sshp
     && wget https://releases.hashicorp.com/terraform/1.0.1/terraform_1.0.1_linux_amd64.zip \
     && unzip terraform_1.0.1_linux_amd64.zip \
     && rm terraform_1.0.1_linux_amd64.zip \
-    && mv terraform /usr/bin/terraform \
-    && mkdir -p /tmp/tf \
-    && mkdir -p /tmp/iso/esxi \
-    && mkdir -p /tmp/iso/vcenter
+    && mv terraform /usr/bin/terraform

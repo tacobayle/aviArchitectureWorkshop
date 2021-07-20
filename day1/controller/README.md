@@ -14,7 +14,7 @@ ansible-galaxy install -f avinetworks.avisdk
 
 ## Prerequisites if you want to use on the top of docker:
 ```
-git clone https://github.com/tacobayle/aviArchitectureWorkshop
+cd ~ ; git clone https://github.com/tacobayle/aviArchitectureWorkshop
 cd aviArchitectureWorkshop/docker/ ; docker build . -t alpine-avi ; cd -
 ```
 
@@ -87,8 +87,7 @@ terraform destroy -auto-approve
 
 ## Apply TF Plan on the top of docker:
 ```
-git clone https://github.com/tacobayle/aviArchitectureWorkshop
-cd day1/controller
+cd ~ ; cd aviArchitectureWorkshop/day1/controller
 docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password --env TF_VAR_avi_password=$TF_VAR_avi_password --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase -v $PWD:/home alpine-avi /bin/bash -c 'terraform apply -auto-approve -var-file=variables.json'
 ```
 
