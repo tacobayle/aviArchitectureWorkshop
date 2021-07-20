@@ -13,4 +13,5 @@ RUN apk add --no-cache --virtual build-dependencies bash jq git curl python3-dev
     && pip3 install avisdk==18.2.9 \
     && pip3 install dnspython \
     && pip3 install netaddr \
-    && ansible-galaxy install -f avinetworks.avisdk
+    && ansible-galaxy install -f avinetworks.avisdk \
+    && mkdir -p /home/bin
