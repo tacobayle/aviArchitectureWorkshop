@@ -1,9 +1,8 @@
 FROM alpine:3.13.4
 LABEL maintainer="Nicolas Bayle"
 
-RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl \
+RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl sshpass py3-pip bash \
     python3-dev libffi-dev openssl-dev build-base \
-    && apk add sshpass py3-pip bash \
     && pip3 install 'cryptography<=3' \
     && pip3 install --upgrade pip \
     && pip3 install ansible==2.9.12 \

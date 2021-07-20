@@ -15,7 +15,7 @@ ansible-galaxy install -f avinetworks.avisdk
 ## Prerequisites if you want to use on the top of docker:
 ```
 git clone https://github.com/tacobayle/aviArchitectureWorkshop
-cd docker/ ; docker build . -t alpine-avi ; cd -
+cd aviArchitectureWorkshop/docker/ ; docker build . -t alpine-avi ; cd -
 ```
 
 ## Environment:
