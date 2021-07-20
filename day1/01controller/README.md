@@ -1,8 +1,4 @@
-# Building an Avi Controller through Automation
-
-## Goal
-Terraform / Ansible | Deploy Avi Controller Cluster on vCenter environment and configure it.
-
+# Building an Avi Controller cluster through Automation
 
 ## Prerequisites
 
@@ -27,7 +23,7 @@ controller-20.1.6-9132.ova
 
 ## Input/Parameters:
 - All the variables are stored in variables.json
-- Environment variables:
+- Environment variables for sensitive variables::
 ```
 export TF_VAR_vsphere_username=******
 export TF_VAR_vsphere_password=******
@@ -46,14 +42,14 @@ export TF_VAR_avi_backup_passphrase=******
 
 ## Apply TF Plan:
 ```
-cd ~ ; cd aviArchitectureWorkshop/day1/controller
+cd ~ ; cd aviArchitectureWorkshop/day1/01controller
 docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username \
                --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase \
                -v $PWD:/home -v $PWD:/home \
-               -v $(dirname $(jq -r .vcenter.content_library.file variables.json)):/home/bin alpine-avi /bin/bash \
-               -c 'cd /home ; terraform init ; terraform apply -auto-approve -var-file=variables.json'
+               -v $(dirname $(jq -r .vcenter.content_library.file variables.json)):/home/bin alpine-avi \
+               /bin/bash -c 'cd /home ; terraform init ; terraform apply -auto-approve -var-file=variables.json'
 ```
 
 ## Destroy TF Plan:
