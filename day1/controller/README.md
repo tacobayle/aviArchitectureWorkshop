@@ -4,7 +4,15 @@
 Terraform / Ansible | Deploy Avi Controller Cluster on vCenter environment and configure it.
 
 
-## build your docker image:
+## Prerequisites
+
+### packages
+
+```
+sudo apt install -y docker.io jq
+```
+
+### build your docker image:
 ```
 cd ~ ; git clone https://github.com/tacobayle/aviArchitectureWorkshop
 cd aviArchitectureWorkshop/docker/ ; docker build . -t alpine-avi ; cd -
