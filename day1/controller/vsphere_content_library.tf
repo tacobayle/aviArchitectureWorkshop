@@ -6,7 +6,6 @@ resource "vsphere_content_library" "library" {
 
 resource "vsphere_content_library_item" "aviController" {
   name        = basename(var.vcenter.content_library.file)
-  description = basename(var.vcenter.content_library.file)
   library_id  = vsphere_content_library.library.id
-  file_url = var.vcenter.content_library.file
+  file_url = "/home/bin/${basename(var.vcenter.content_library.file)}"
 }
