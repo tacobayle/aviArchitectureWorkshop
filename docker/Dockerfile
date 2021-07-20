@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual build-dependencies cdrkit bash jq git curl sshp
     && pip3 install netaddr \
     && ansible-galaxy install -f avinetworks.avisdk \
     && apk del build-dependencies \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
     && wget https://releases.hashicorp.com/terraform/1.0.1/terraform_1.0.1_linux_amd64.zip \
     && unzip terraform_1.0.1_linux_amd64.zip \
     && rm terraform_1.0.1_linux_amd64.zip \
