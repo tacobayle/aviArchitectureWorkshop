@@ -22,9 +22,10 @@ export TF_VAR_avi_password=******
 
 
 ```
+cd ~ ; cd aviArchitectureWorkshop/day1/02cloud
 docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username \
                --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                -v $PWD:/home -v $PWD:/home \
-               /bin/bash -c 'cd /home ; ansible-playbook ansible/main.yml --extra-vars \'{\"avi_version\": $(terraform output -json | jq .avi_version.value), \"avi_controller\": $(terraform output -json | jq .controllers_ip.value[0]), \"avi_password\": \"$TF_VAR_avi_password\", \"vsphere_username\": \"$TF_VAR_vsphere_username", \"vsphere_password\": \"$TF_VAR_vsphere_password\"}\''
+               /bin/bash -c 'cd /home ; ansible-playbook ansible/main.yml --extra-vars \'{\"avi_version\": $(terraform output -json | jq .avi_version.value), \"avi_controller\": $(terraform output -json | jq .controllers_ip.value[0]), \"avi_password\": \"$TF_VAR_avi_password\", \"vsphere_username\": \"$TF_VAR_vsphere_username", \"vsphere_password\": \"$TF_VAR_vsphere_password\"}\' --extra-vars @variables.json'
 ```
