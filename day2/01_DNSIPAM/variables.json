@@ -1,8 +1,37 @@
 {
   "dns": {
     "name": "dns-avi",
+    "cloud": "cloud01-vCenter",
     "domains": [
       "aviworkshop.com"
     ]
+  },
+  "ipam": {
+    "name": "ipam-avi",
+    "cloud": "cloud01-vCenter",
+    "networks": {
+      "vip":[
+        {
+          "name": "vxw-dvs-34-virtualwire-118-sid-1080117-sof2-01-vc08-avi-dev114",
+          "type": "V4",
+          "ipStartPool": "100.64.131.200",
+          "ipEndPool": "100.64.131.210",
+          "cidr": "100.64.131.0/24",
+          "exclude_discovered_subnets": true,
+          "vcenter_dvs": true,
+          "dhcp_enabled": false
+        }
+      ],
+      "others":[
+        {
+          "name": "vxw-dvs-34-virtualwire-117-sid-1080116-sof2-01-vc08-avi-dev113",
+          "type": "V4",
+          "cidr": "100.64.130.0/24",
+          "exclude_discovered_subnets": true,
+          "vcenter_dvs": true,
+          "dhcp_enabled": true
+        }
+      ]
+    }
   }
 }
