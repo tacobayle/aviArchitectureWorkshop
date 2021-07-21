@@ -4,6 +4,7 @@
       "name": "cloud01-vCenter",
       "type": "CLOUD_VCENTER",
       "vcenter": {
+        "username": "aviuser6",
         "server": "sof2-01-vc08.oc.vmware.com",
         "dc": "sof2-01-vc08",
         "management_network": {

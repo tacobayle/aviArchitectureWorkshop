@@ -1,7 +1,6 @@
 #
 # Environment Variables
 #
-variable "vsphere_username" {}
 variable "vsphere_password" {}
 variable "avi_password" {}
 variable "avi_backup_passphrase" {}

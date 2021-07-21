@@ -25,7 +25,6 @@ controller-20.1.6-9132.ova
 - All the variables are stored in variables.json
 - Environment variables for sensitive variables::
 ```
-export TF_VAR_vsphere_username=******
 export TF_VAR_vsphere_password=******
 export TF_VAR_avi_password=******
 export TF_VAR_avi_backup_passphrase=******
@@ -43,8 +42,7 @@ export TF_VAR_avi_backup_passphrase=******
 ## Apply TF Plan:
 ```
 cd ~ ; cd aviArchitectureWorkshop/day1/01controller
-docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username \
-               --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
+docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase \
                -v $PWD:/home -v $PWD:/home \
@@ -54,7 +52,10 @@ docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username \
 
 ## Destroy TF Plan:
 ```
-git clone https://github.com/tacobayle/aviArchitectureWorkshop
-cd day1/controller
-docker run -it --env TF_VAR_vsphere_username=$TF_VAR_vsphere_username --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password --env TF_VAR_avi_password=$TF_VAR_avi_password --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase -v $PWD:/home alpine-avi /bin/bash -c 'terraform destroy -auto-approve -var-file=variables.json'
+cd ~ ; cd aviArchitectureWorkshop/day1/01controller
+docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
+               --env TF_VAR_avi_password=$TF_VAR_avi_password \
+               --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase \
+               -v $PWD:/home alpine-avi \
+               /bin/bash -c 'terraform destroy -auto-approve -var-file=variables.json'
 ```

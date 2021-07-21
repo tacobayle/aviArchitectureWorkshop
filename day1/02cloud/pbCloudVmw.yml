@@ -23,14 +23,14 @@
     - name: Defining variable vcenter_configuration - VMW
       set_fact:
         vcenter_configuration:
-          username: "{{ vsphere_username }}"
+          username: "{{ avi.cloud.vcenter.username }}"
           password: "{{ vsphere_password }}"
           vcenter_url: "{{ avi.cloud.vcenter.server }}"
           privilege: WRITE_ACCESS
           datacenter: "{{ avi.cloud.vcenter.dc }}"
           management_network: "/api/vimgrnwruntime/?name={{ avi.cloud.vcenter.management_network.name }}"
       when:
-        - vsphere_username is defined
+        - avi.cloud.vcenter.username is defined
         - vsphere_password is defined
         - avi.cloud.vcenter.server is defined
         - avi.cloud.vcenter.dc is defined
