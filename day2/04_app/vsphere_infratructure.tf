@@ -29,5 +29,4 @@ data "vsphere_network" "networkBackendVmw" {
 
 data "vsphere_folder" "folder" {
   path          = var.vcenter.folder
-  type          = "vm"
 }
