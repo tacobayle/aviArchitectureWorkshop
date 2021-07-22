@@ -3,7 +3,7 @@ data "template_file" "backend_vmw_userdata" {
   template = file("${path.module}/userdata/backend_vmw.userdata")
   vars = {
     username     = var.backend_vmw.username
-    pubkey       = file(var.backend_vmw["public_key_path"])
+//    pubkey       = file(var.backend_vmw["public_key_path"])
     netplanFile  = var.backend_vmw["netplanFile"]
     maskData = var.backend_vmw.maskData
     ipData      = element(var.backend_vmw.ipsData, count.index)
@@ -60,7 +60,7 @@ resource "vsphere_virtual_machine" "backend_vmw" {
   vapp {
     properties = {
       hostname    = "backend_vmw-${count.index}"
-      public-keys = file(var.backend_vmw["public_key_path"])
+//      public-keys = file(var.backend_vmw["public_key_path"])
       user-data   = base64encode(data.template_file.backend_vmw_userdata[count.index].rendered)
     }
   }
@@ -70,7 +70,7 @@ resource "vsphere_virtual_machine" "backend_vmw" {
     type        = "ssh"
     agent       = false
     user        = var.backend_vmw.username
-    private_key = file(var.backend_vmw["private_key_path"])
+//    private_key = file(var.backend_vmw["private_key_path"])
   }
 
   provisioner "remote-exec" {

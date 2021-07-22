@@ -6,8 +6,6 @@ users:
     shell: /bin/bash
     sudo:  ALL=(ALL) NOPASSWD:ALL
     chpasswd: {expire: False}
-    ssh_authorized_keys:
-      - ${pubkey}
 
 chpasswd:
   list: |
