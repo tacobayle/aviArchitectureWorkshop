@@ -24,8 +24,9 @@ cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase \
-               -v $PWD:/home -v $PWD:/home \
+               -v $PWD:/home -v \
                -v $(dirname $(jq -r .vcenter.content_library.file day1/01_controller/variables.json)):/home/bin alpine-avi \
+               alpine-avi \
                /bin/bash -c 'cd /home/day1/01_controller ; terraform init ; terraform apply -auto-approve -var-file=variables.json ; terraform output -json | tee ../../terraform.json'
 ```
 
@@ -35,6 +36,7 @@ cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                --env TF_VAR_avi_backup_passphrase=$TF_VAR_avi_backup_passphrase \
-               -v $PWD:/home alpine-avi \
+               -v $PWD:/home \
+               alpine-avi \
                /bin/bash -c 'cd /home/day1/01_controller ; terraform destroy -auto-approve -var-file=variables.json '
 ```

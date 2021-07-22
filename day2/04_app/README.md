@@ -21,7 +21,8 @@ cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_docker_registry_username=$TF_VAR_docker_registry_username \
                --env TF_VAR_docker_registry_password=$TF_VAR_docker_registry_password \
-               -v $PWD:/home -v $PWD:/home \
+               -v $PWD:/home \
+               alpine-avi \
                /bin/bash -c 'cd /home/day2/04_app ; terraform init ; terraform apply -auto-approve ; terraform output -json | tee ../../app.json'
 ```
 
@@ -31,6 +32,7 @@ cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_docker_registry_username=$TF_VAR_docker_registry_username \
                --env TF_VAR_docker_registry_password=$TF_VAR_docker_registry_password \
-               -v $PWD:/home -v $PWD:/home \
+               -v $PWD:/home \
+               alpine-avi \
                /bin/bash -c 'cd /home/day2/04_app ; terraform init ; terraform destroy -auto-approve'
 ```
