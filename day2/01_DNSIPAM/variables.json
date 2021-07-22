@@ -1,14 +1,12 @@
 {
   "dns": {
     "name": "dns-avi",
-    "cloud": "cloud01-vCenter",
     "domains": [
       "aviworkshop.com"
     ]
   },
   "ipam": {
     "name": "ipam-avi",
-    "cloud": "cloud01-vCenter",
     "networks": {
       "vip":[
         {

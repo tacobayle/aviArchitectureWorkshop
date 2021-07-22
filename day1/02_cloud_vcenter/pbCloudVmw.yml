@@ -10,22 +10,22 @@
 
     - name: Print Avi version
       debug:
-        msg: "{{ avi_version }}"
+        msg: "{{ avi_version.value }}"
 
     - name: Print Avi controller IP
       debug:
-        msg: "{{ avi_controller }}"
+        msg: "{{ controllers_ip.value.0 }}"
 
     - name: Set variable avi_credentials
       set_fact:
         avi_credentials: >
-          {'api_version': "{{ avi_version }}",
-           'controller': "{{ avi_controller }}",
+          {'api_version': "{{ avi_version.value }}",
+           'controller': "{{ controllers_ip.value.0 }}",
            'password': "{{ avi_password }}",
            'username': "admin"}
       when:
-        - avi_version is defined
-        - avi_controller is defined
+        - avi_version.value is defined
+        - controllers_ip.value.0 is defined
         - avi_password is defined
 
     - name: Defining variable vcenter_configuration

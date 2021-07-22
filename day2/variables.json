@@ -1,0 +1,19 @@
+{
+  "avi":{
+    "cloud": {
+      "name": "cloud01-vCenter",
+      "type": "CLOUD_VCENTER",
+      "ipam_provider_ref": "ipam-avi",
+      "dns_provider_ref": "dns-avi",
+      "vcenter": {
+        "username": "aviuser6",
+        "server": "sof2-01-vc08.oc.vmware.com",
+        "dc": "sof2-01-vc08",
+        "management_network": {
+          "name": "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt",
+          "dhcp_enabled": true
+        }
+      }
+    }
+  }
+}

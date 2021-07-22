@@ -26,5 +26,5 @@ cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_avi_password=$TF_VAR_avi_password \
                -v $PWD:/home alpine-avi \
-               /bin/bash -c 'cd /home/day1/01_controller ; ansible-playbook ../02_cloud_vcenter/pbCloudVmw.yml --extra-vars "{\"avi_version\": $(terraform output -json | jq .avi_version.value), \"avi_controller\": $(terraform output -json | jq .controllers_ip.value[0]), \"avi_password\": \"$TF_VAR_avi_password\", \"vsphere_password\": \"$TF_VAR_vsphere_password\"}" --extra-vars @../02_cloud_vcenter/variables.json'
+               /bin/bash -c 'cd /home ; ansible-playbook day1/02_cloud_vcenter/pbCloudVmw.yml --extra-vars "{\"avi_password\": \"$TF_VAR_avi_password\", \"vsphere_password\": \"$TF_VAR_vsphere_password\"}" --extra-vars @terraform.json --extra-vars @day1/02_cloud_vcenter/variables.json'
 ```
