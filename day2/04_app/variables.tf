@@ -10,6 +10,8 @@ variable "vcenter" {
     resource_pool = "sof2-01-vc08c01/Resources"
     folder = "NicWorkshop"
     networkMgmt = "vxw-dvs-34-virtualwire-3-sid-1080002-sof2-01-vc08-avi-mgmt"
+    username = "aviuser6"
+    server = "sof2-01-vc08.oc.vmware.com"
   }
 }
 
