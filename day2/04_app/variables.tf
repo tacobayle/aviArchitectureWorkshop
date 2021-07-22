@@ -1,6 +1,6 @@
 variable "docker_registry_username" {}
 variable "docker_registry_password" {}
-variable "avi_vsphere_password" {}
+variable "vsphere_password" {}
 
 variable "vcenter" {
   type = map
