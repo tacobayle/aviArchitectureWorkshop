@@ -1,0 +1,61 @@
+{
+  "seg":
+  [
+    {
+      "cloud": "cloud01-vCenter",
+      "name": "Default-Group",
+      "ha_mode": "HA_MODE_SHARED",
+      "min_scaleout_per_vs": 2,
+      "buffer_se": 1,
+      "extra_shared_config_memory": 0,
+      "vcenter_folder": "NicWorkshop",
+      "vcpus_per_se": 2,
+      "memory_per_se": 4096,
+      "disk_per_se": 25,
+      "realtime_se_metrics": 
+        {
+          "enabled": true,
+          "duration": 0
+        }
+    },
+    {
+      "cloud": "cloud01-vCenter",
+      "name": "seGroupCpuAutoScale",
+      "ha_mode": "HA_MODE_SHARED",
+      "min_scaleout_per_vs": 1,
+      "max_scaleout_per_vs": 2,
+      "max_cpu_usage": 70,
+      "buffer_se": 2,
+      "extra_shared_config_memory": 0,
+      "vcenter_folder": "NicWorkshop",
+      "vcpus_per_se": 1,
+      "memory_per_se": 2048,
+      "disk_per_se": 25,
+      "auto_rebalance": true,
+      "auto_rebalance_interval": 30,
+      "auto_rebalance_criteria": ["SE_AUTO_REBALANCE_CPU"],
+       "realtime_se_metrics": 
+         {
+           "enabled": true,
+           "duration": 0
+         }
+    },
+    {
+      "cloud": "cloud01-vCenter",
+      "name": "seGroupGslb",
+      "ha_mode": "HA_MODE_SHARED",
+      "min_scaleout_per_vs": 1,
+      "buffer_se": 0,
+      "extra_shared_config_memory": 2000,
+      "vcenter_folder": "NicWorkshop",
+      "vcpus_per_se": 2,
+      "memory_per_se": 8192,
+      "disk_per_se": 25,
+      "realtime_se_metrics":
+        {
+          "enabled": true,
+          "duration": 0
+        }
+    }
+  ]
+}

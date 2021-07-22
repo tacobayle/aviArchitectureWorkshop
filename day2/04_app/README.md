@@ -1,12 +1,12 @@
-# Building an Avi Controller cluster through Automation
+# Creating a basic App through Automation
 
 ## Input/Parameters:
-- All the variables are stored in variables.json
+- All the variables are stored in variables.tf
 - Environment variables for sensitive variables:
 ```
 export TF_VAR_vsphere_password=******
 export TF_VAR_avi_password=******
-export TF_VAR_avi_backup_passphrase=******
+
 ```
 
 ## Use the terraform plan to:

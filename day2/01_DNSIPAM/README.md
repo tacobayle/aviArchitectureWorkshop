@@ -5,20 +5,12 @@
 01_controller must have been done
 02_cloud_vcenter must have been done
 
-## Environment:
-
-### Avi Version
-```
-controller-20.1.6-9132.ova
-```
-
 ## Input/Parameters:
 - All the variables are stored in variables.json
 - Environment variables for sensitive variables:
 ```
 export TF_VAR_avi_password=******
 ```
-
 
 # Configure Avi DNS and IPAM Profile:
 ```

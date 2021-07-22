@@ -4,13 +4,6 @@
 
 01_controller must have been done
 
-## Environment:
-
-### Avi Version
-```
-controller-20.1.6-9132.ova
-```
-
 ## Input/Parameters:
 - All the variables are stored in variables.json
 - Environment variables for sensitive variables:

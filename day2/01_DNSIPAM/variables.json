@@ -17,6 +17,7 @@
           "cidr": "100.64.131.0/24",
           "exclude_discovered_subnets": true,
           "vcenter_dvs": true,
+          "cloud": "cloud01-vCenter",
           "dhcp_enabled": false
         }
       ],
@@ -27,6 +28,7 @@
           "cidr": "100.64.130.0/24",
           "exclude_discovered_subnets": true,
           "vcenter_dvs": true,
+          "cloud": "cloud01-vCenter",
           "dhcp_enabled": true
         }
       ]
