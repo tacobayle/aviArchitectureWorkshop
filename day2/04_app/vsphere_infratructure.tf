@@ -27,7 +27,7 @@ data "vsphere_network" "networkBackendVmw" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-resource "vsphere_folder" "folder" {
+data "vsphere_folder" "folder" {
   path          = var.vcenter.folder
   type          = "vm"
   datacenter_id = data.vsphere_datacenter.dc.id
