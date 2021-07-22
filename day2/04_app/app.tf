@@ -65,17 +65,17 @@ resource "vsphere_virtual_machine" "backend_vmw" {
     }
   }
 
-  connection {
-    host        = self.default_ip_address
-    type        = "ssh"
-    agent       = false
-    user        = var.backend_vmw.username
-//    private_key = file(var.backend_vmw["private_key_path"])
-  }
-
-  provisioner "remote-exec" {
-    inline      = [
-      "while [ ! -f /tmp/cloudInitDone.log ]; do sleep 1; done"
-    ]
-  }
+//  connection {
+//    host        = self.default_ip_address
+//    type        = "ssh"
+//    agent       = false
+//    user        = var.backend_vmw.username
+////    private_key = file(var.backend_vmw["private_key_path"])
+//  }
+//
+//  provisioner "remote-exec" {
+//    inline      = [
+//      "while [ ! -f /tmp/cloudInitDone.log ]; do sleep 1; done"
+//    ]
+//  }
 }
