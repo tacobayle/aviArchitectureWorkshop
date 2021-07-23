@@ -1,0 +1,21 @@
+{
+  "vs": {
+    "name": "vs",
+    "cloud_ref": "cloud01-vCenter",
+    "network": "vxw-dvs-34-virtualwire-118-sid-1080117-sof2-01-vc08-avi-dev114",
+    "domain": "aviworkshop.com",
+    "server_ports": 80,
+    "se_group_ref": "seGroupCpuAutoScale",
+    "services": [
+      {
+        "port": 80,
+        "enable_ssl": false
+      },
+      {
+        "port": 443,
+        "enable_ssl": true
+      }
+
+    ]
+  }
+}
