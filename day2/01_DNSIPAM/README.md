@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-01_controller must have been done
-02_cloud_vcenter must have been done
+day1/01_controller must have been done
+day1/02_cloud_vcenter must have been done
 
 ## Input/Parameters:
 - All the variables are stored in variables.json

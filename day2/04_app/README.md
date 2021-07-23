@@ -7,9 +7,6 @@
 export TF_VAR_vsphere_password=******
 export TF_VAR_docker_registry_username=******
 export TF_VAR_docker_registry_password=******
-
-
-
 ```
 
 ## Use the terraform plan to:

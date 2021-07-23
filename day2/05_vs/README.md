@@ -16,7 +16,7 @@ day2/04_app
 export TF_VAR_avi_password=******
 ```
 
-# Configure Avi DNS and IPAM Profile:
+# Configure Avi Vs:
 ```
 cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_avi_password=$TF_VAR_avi_password \
