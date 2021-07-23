@@ -45,7 +45,7 @@
         avi_api_patch_op : add
         avi_api_update_method: patch
         name: "pool-{{ vs.name }}"
-        cloud_ref: "/api/cloud/?name={{ vs.cloud | default('Default-Cloud') }}"
+        cloud_ref: "/api/cloud/?name={{ vs.cloud_ref | default('Default-Cloud') }}"
         tenant_ref: "/api/tenant?name={{ vs.tenant_ref | default('admin') }}"
         default_server_port: "{{ vs.server_ports | default('admin') }}"
         servers:
