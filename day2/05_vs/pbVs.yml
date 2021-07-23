@@ -36,7 +36,7 @@
         cloud_ref: "/api/cloud/?name={{ vs.cloud | default('Default-Cloud') }}"
         tenant_ref: "/api/tenant?name={{ vs.tenant_ref | default('admin') }}"
       when:
-        - vs.name is not defined
+        - vs.name is defined
 
     - name: update pool with servers
       avi_pool:
@@ -54,7 +54,7 @@
               type: 'V4'
       loop: "{{ backend_vmw.value }}"
       when:
-        - vs.name is not defined
+        - vs.name is defined
         - backend_vmw.value is defined
 
     - name: get Network details
@@ -83,26 +83,19 @@
     - name: Debug
       debug:
         msg: "{{ networkName }}"
-      when:
-        - state is not defined
+
 
     - name: Debug
       debug:
         msg: "{{ networkMask }}"
-      when:
-        - state is not defined
 
     - name: Debug
       debug:
         msg: "{{ networkAddress }}"
-      when:
-        - state is not defined
 
     - name: Debug
       debug:
         msg: "{{ networkType }}"
-      when:
-        - state is not defined
 
     - name: Create vsvip
       avi_vsvip:
