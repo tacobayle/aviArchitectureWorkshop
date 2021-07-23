@@ -103,7 +103,7 @@
         api_context: "{{ avi_api_context | default(omit) }}"
         name: "vsvip-{{ vs.name }}"
         cloud_ref: "/api/cloud/?name={{ vs.cloud_ref | default('Default-Cloud') }}"
-        tenant_ref: "/api/tenant?name{{ vs.tenant_ref | default('admin') }}"
+        tenant_ref: "/api/tenant?name={{ vs.tenant_ref | default('admin') }}"
         dns_info:
           - fqdn: "{{ vs.name + '.' + vs.domain }}"
         vip:
