@@ -105,7 +105,7 @@
         cloud_ref: "/api/cloud/?name={{ vs.cloud_ref | default('Default-Cloud') }}"
         tenant_ref: "/api/tenant?name{{ vs.tenant_ref | default('admin') }}"
         dns_info:
-          - fqdn: "vs.name + '.' + vs.domain) }}"
+          - fqdn: "{{ vs.name + '.' + vs.domain) }}"
         vip:
           - auto_allocate_ip: true
             ipam_network_subnet:
