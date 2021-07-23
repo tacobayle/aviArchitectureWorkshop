@@ -133,7 +133,7 @@
         ssl_profile_ref: "/api/sslprofile/?name={{ item.ssl_profile_ref | default('System-Standard') }}"
         ssl_key_and_certificate_refs: "/api/sslkeyandcertificate/?name={{ item.ssl_key_and_certificate_refs | default('System-Default-Cert') }}"
         services: "{{ vs.services }}"
-        pool_ref: "pool-{{ vs.name }}"
+        pool_ref: "/api/pool?name=pool-{{ vs.name }}"
         vsvip_ref: "/api/vsvip/?name=vsvip-{{ vs.name }}"
         se_group_ref:  "/api/serviceenginegroup/?name={{ vs.se_group_ref | default('Default-Group') }}"
         state: "{{ state | default(omit) }}"
