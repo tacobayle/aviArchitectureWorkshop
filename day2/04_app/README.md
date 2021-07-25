@@ -20,7 +20,10 @@ docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_docker_registry_password=$TF_VAR_docker_registry_password \
                -v $PWD:/home \
                alpine-avi \
-               /bin/bash -c 'cd /home/day2/04_app ; terraform init ; terraform apply -auto-approve ; terraform output -json | tee ../../app.json'
+               /bin/bash -c 'cd /home/day2/04_app; \
+                             terraform init; \
+                             terraform apply -auto-approve; \
+                             terraform output -json | tee ../../app.json'
 ```
 
 ## Destroy TF Plan:
@@ -31,5 +34,7 @@ docker run -it --env TF_VAR_vsphere_password=$TF_VAR_vsphere_password \
                --env TF_VAR_docker_registry_password=$TF_VAR_docker_registry_password \
                -v $PWD:/home \
                alpine-avi \
-               /bin/bash -c 'cd /home/day2/04_app ; terraform init ; terraform destroy -auto-approve'
+               /bin/bash -c 'cd /home/day2/04_app; \
+                             terraform init; \
+                             terraform destroy -auto-approve'
 ```

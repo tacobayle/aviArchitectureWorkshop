@@ -8,6 +8,7 @@ sudo apt install -y docker.io jq
 
 ## build your docker image:
 ```
+cd ~ ; rm -fr aviArchitectureWorkshop
 cd ~ ; git clone https://github.com/tacobayle/aviArchitectureWorkshop
 cd ~/aviArchitectureWorkshop/docker/ ; docker build . -t alpine-avi ; cd -
 ```

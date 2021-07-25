@@ -16,6 +16,7 @@ export TF_VAR_avi_password=******
 ```
 cd ~ ; cd aviArchitectureWorkshop
 docker run -it --env TF_VAR_avi_password=$TF_VAR_avi_password \
-               -v $PWD:/home alpine-avi \
+               -v $PWD:/home \
+               alpine-avi \
                /bin/bash -c 'cd /home ; ansible-playbook day2/01_DNSIPAM/pbDnsIpamVmw.yml --extra-vars "{\"avi_password\": \"$TF_VAR_avi_password\"}" --extra-vars @terraform.json --extra-vars @day2/01_DNSIPAM/variables.json'
 ```
