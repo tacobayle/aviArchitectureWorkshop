@@ -9,8 +9,8 @@ RUN apk add --no-cache --virtual build-dependencies bash jq git curl python3-dev
     && mv terraform /usr/bin/terraform \
     && pip3 install 'cryptography<=3' \
     && pip3 install --upgrade pip \
-    && pip3 install ansible==2.9.12 \
-    && pip3 install avisdk==18.2.9 \
+    && pip3 install ansible==2.10.7 \
+    && pip3 install avisdk==21.1.1 \
     && pip3 install dnspython \
     && pip3 install netaddr \
     && ansible-galaxy install -f avinetworks.avisdk \
