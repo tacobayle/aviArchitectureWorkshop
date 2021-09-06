@@ -1,6 +1,6 @@
 {
   "controllers_ip": {
-    "value": "10.41.134.126"
+    "value": ["10.41.134.126"]
   },
   "avi_version": {
     "value": "21.1.1"
