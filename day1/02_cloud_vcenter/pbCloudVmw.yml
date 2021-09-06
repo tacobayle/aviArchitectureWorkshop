@@ -30,7 +30,7 @@
 
     - name: Defining variable vcenter_configuration
       set_fact:
-        community.network.vcenter_configuration:
+        vcenter_configuration:
           username: "{{ avi.cloud.vcenter.username }}"
           password: "{{ vsphere_password }}"
           vcenter_url: "{{ avi.cloud.vcenter.server }}"
