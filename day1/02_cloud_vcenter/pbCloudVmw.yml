@@ -30,7 +30,7 @@
 
     - name: Defining variable vcenter_configuration
       set_fact:
-        vcenter_configuration:
+        community.network.vcenter_configuration:
           username: "{{ avi.cloud.vcenter.username }}"
           password: "{{ vsphere_password }}"
           vcenter_url: "{{ avi.cloud.vcenter.server }}"
@@ -43,7 +43,7 @@
         - avi.cloud.vcenter.dc is defined
 
     - name: Configure Avi Cloud
-      avi_cloud:
+      community.network.avi_cloud:
         avi_credentials: "{{ avi_credentials | default(omit) }}"
         api_context: "{{ avi_api_context | default(omit) }}"
         name:  "{{ avi.cloud.name }}"
@@ -63,7 +63,7 @@
         - output_cloud_vmw is defined
 
     - name: Wait for network sync for cloud to complete...
-      avi_api_session:
+      community.network.avi_api_session:
         avi_credentials: "{{ avi_credentials | default(omit) }}"
         api_context: "{{ avi_api_context | default(omit) }}"
         http_method: "get"
@@ -76,7 +76,7 @@
       delay: 5
 
     - name: Configure cloud management network
-      avi_api_session:
+      community.network.avi_api_session:
         avi_credentials: "{{ avi_credentials | default(omit) }}"
         api_context: "{{ avi_api_context | default(omit) }}"
         http_method: "patch"

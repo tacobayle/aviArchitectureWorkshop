@@ -1,7 +1,7 @@
 {
   "avi":{
     "cloud": {
-      "name": "cloud01-vCenter",
+      "name": "dc1-vCenter",
       "type": "CLOUD_VCENTER",
       "vcenter": {
         "username": "aviuser6",

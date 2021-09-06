@@ -4,6 +4,8 @@
 
 ```
 sudo apt install -y docker.io jq
+sudo groupadd docker
+sudo usermod -aG docker $USER
 ```
 
 ## build your docker image:
